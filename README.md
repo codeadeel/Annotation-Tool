@@ -38,7 +38,7 @@ docker run -d -p 27017:27017 --name mongodb mongo@sha256:6743836d42756b2ae50549b
 
 ### <a name="mongo_experimental_data">Experimental Data
 
-After ***MongoDB*** is up and running, [***Dummy_Files***][dummy files folder] can be added to ***some single database, as individual collection*** in ***MongoDB*** for experimentation with subject annotation tool. Links to respective files for each module is provided following:
+After ***MongoDB*** is up and running, [***Dummy_Files***][dummy files folder] can be added to ***some single database, as individual collection*** in ***MongoDB*** for experimentation with subject annotation tool. Links to respective files for each module are provided below:
 
 - [Stream Classification & Brand Recognition][scbr dummy file]
 - [Face Detection & Recognition][face dummy file]
@@ -55,7 +55,7 @@ load_db_name = 'brs' # Target Database on MongoDB
 
 ## <a name="annotation_tool_build">Building Annotation Tool
 
-Annotation tool can be build by [***Dockerfile***][dockerfile link]. The build image contains all necessary libraries to develop, test and deploy annotation tool. By running the following command in current [***Dockerfile***][dockerfile link] directory, we can easily build image:
+Annotation tool can be built by [***Dockerfile***][dockerfile link]. The build image contains all necessary libraries to develop, test and deploy annotation tool. By running the following command in current [***Dockerfile***][dockerfile link] directory, we can easily build image:
 
 ```bash
 docker build -t annotation_tool:basic .
@@ -77,7 +77,7 @@ Subject annotation tool has four tabs, named as following:
 - Face Detection
 - Ticker Detection
 
-The above tabs are disscussed briefly as following:
+The above tabs are discussed briefly below:
 
 ### <a name="connect_tab">Connect Tab
 
@@ -93,7 +93,7 @@ This tab is responsible for performing annotation for SCBR. In this tab, we are 
 
 ![Annotation Tool SCBR Tab][second tab link]
 
-In above given example, user would annotate on the basis of per frame or iteratively using respective buttons. After done with annotation, data can be directly saved to database.
+In above given example, user would annotate on the basis of per frame or iteratively using respective buttons. After being done with annotation, data can be directly saved to database.
 
 ### <a name="face_tab">Face Detection Tab
 
@@ -101,7 +101,7 @@ This tab is responsible for performing annotation for Face Detection & Recogniti
 
 ![Annotation Tool Face Detection Tab][third tab link]
 
-In above given example, user would annotate on the basis of per frame or iteratively using respective buttons. After done with annotation, data can be directly saved to database.
+In above given example, user would annotate on the basis of per frame or iteratively using respective buttons. After being done with annotation, data can be directly saved to database.
 
 ### <a name="ticker_tab">Ticker Detection Tab
 
@@ -109,7 +109,7 @@ This tab is responsible for performing annotation for Ticker Detection & Recogni
 
 ![Annotation Tool Ticker Detection Tab][fourth tab link]
 
-In above given example, user would annotate on the basis of per frame or iteratively using respective buttons. After done with annotation, data can be directly saved to database.
+In above given example, user would annotate on the basis of per frame or iteratively using respective buttons. After being done with annotation, data can be directly saved to database.
 
 ## <a name="annotation_develop">Annotation Tool Development
 
@@ -143,7 +143,7 @@ Subject annotation can be deployed on following platforms:
 - Containers
 - Native Host Machine Installation
 
-Whatever the deployment method is, it is required for database to be accessable over network.
+Whatever the deployment method is, it is required for database to be accessible over network.
 
 [dockerfile link]: ./Dockerfile
 [dummy files folder]: ./Dummy_Files
