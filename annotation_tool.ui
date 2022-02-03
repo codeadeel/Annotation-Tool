@@ -1,0 +1,918 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>911</width>
+    <height>735</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Mediam.ai Annotation Tool</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>logo.png</normaloff>logo.png</iconset>
+  </property>
+  <widget class="QTabWidget" name="db_connect">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>891</width>
+     <height>721</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <property name="usesScrollButtons">
+    <bool>true</bool>
+   </property>
+   <property name="documentMode">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>Connect</string>
+    </attribute>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>231</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Enter Database Address to Connect:</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>160</y>
+       <width>282</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="addr_label">
+        <property name="text">
+         <string>IP Address</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="address_bar">
+        <property name="toolTip">
+         <string extracomment="Database IP Address"/>
+        </property>
+        <property name="text">
+         <string>0.0.0.0:27017</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="db_connect_button">
+        <property name="toolTip">
+         <string extracomment="Connect To Database"/>
+        </property>
+        <property name="text">
+         <string>Connect</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>190</y>
+       <width>281</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="colection_selector_label">
+        <property name="text">
+         <string>Collection</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="collection_selector_combo">
+        <property name="toolTip">
+         <string extracomment="Select Annotation Framework"/>
+        </property>
+        <property name="maxVisibleItems">
+         <number>50</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="collection_selector_button">
+        <property name="toolTip">
+         <string extracomment="Proceed for Annotation"/>
+        </property>
+        <property name="text">
+         <string>Select</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>220</y>
+       <width>281</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="channel_selector_label">
+        <property name="text">
+         <string>Channel</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="channel_selector_combo">
+        <property name="toolTip">
+         <string extracomment="Subject Channel for Annotation"/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="annot_starter">
+        <property name="toolTip">
+         <string extracomment="Start Annotation"/>
+        </property>
+        <property name="text">
+         <string>Start Annotation</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>160</y>
+       <width>191</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="db_connect_meta_label">
+        <property name="text">
+         <string>Database Connection Status</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="db_meta_label">
+        <property name="text">
+         <string>Database Connected Name</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="db_meta_collection_label">
+        <property name="text">
+         <string>Database Connected Collection</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="de_meta_channel_label">
+        <property name="text">
+         <string>Annotation Channel</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>520</x>
+       <y>160</y>
+       <width>92</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLabel" name="db_connect_meta_status">
+        <property name="text">
+         <string>Not Connected</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="db_meta_name">
+        <property name="text">
+         <string>Unknown</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="db_meta_collection">
+        <property name="text">
+         <string>Unknown</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="db_meta_channel">
+        <property name="text">
+         <string>Unknown</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>529</width>
+       <height>122</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QLabel" name="connector_heading">
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+          <underline>false</underline>
+         </font>
+        </property>
+        <property name="text">
+         <string>Connect to Database</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="connector_head_d1">
+        <property name="text">
+         <string>First you need to connect with Database. Follow the following steps to start annotation:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="connector_head_d2">
+        <property name="text">
+         <string>1. Enter IP address of Database and press Connect button.</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="connector_head_d3">
+        <property name="text">
+         <string>2. Select collection from given list and press Select button.</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="connector_head_d4">
+        <property name="text">
+         <string>3. Select channel from the given list and press Start Annotation button.</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>4. Head over to respective tab to start annotation.</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>SCBR</string>
+    </attribute>
+    <widget class="QLabel" name="current_frame_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>420</width>
+       <height>315</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Current Frame</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="feedback_frame_label">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>10</y>
+       <width>420</width>
+       <height>315</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>System Feedback</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QSlider" name="feedback_slider">
+     <property name="geometry">
+      <rect>
+       <x>550</x>
+       <y>330</y>
+       <width>321</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string extracomment="Analyze System Feedback"/>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>340</y>
+       <width>168</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QPushButton" name="sc_frame_back">
+        <property name="toolTip">
+         <string extracomment="Proceed to Previous Frame"/>
+        </property>
+        <property name="text">
+         <string>Back</string>
+        </property>
+        <property name="autoRepeat">
+         <bool>true</bool>
+        </property>
+        <property name="autoRepeatInterval">
+         <number>50</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="sc_frame_next">
+        <property name="toolTip">
+         <string extracomment="Proceed to Next Frame"/>
+        </property>
+        <property name="text">
+         <string>Next</string>
+        </property>
+        <property name="autoRepeat">
+         <bool>true</bool>
+        </property>
+        <property name="autoRepeatInterval">
+         <number>50</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QCheckBox" name="same_frame_check">
+     <property name="geometry">
+      <rect>
+       <x>550</x>
+       <y>360</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string extracomment="Current Frame Same to System Feedback?"/>
+     </property>
+     <property name="text">
+      <string>Same Frame</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="annot_save_button">
+     <property name="geometry">
+      <rect>
+       <x>660</x>
+       <y>360</y>
+       <width>211</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string extracomment="Save Annotation to Database"/>
+     </property>
+     <property name="text">
+      <string>Save Annotation</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>370</y>
+       <width>263</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QRadioButton" name="radio_ad">
+        <property name="text">
+         <string>Advertisement</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="radio_news">
+        <property name="text">
+         <string>News</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="radio_program">
+        <property name="text">
+         <string>Program</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>550</x>
+       <y>390</y>
+       <width>321</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <item>
+       <widget class="QLabel" name="stream_type_label">
+        <property name="text">
+         <string>Stream Type:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="stream_feedback_system">
+        <property name="toolTip">
+         <string extracomment="Stream Type Classified by System"/>
+        </property>
+        <property name="text">
+         <string>System SC Feed</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>550</x>
+       <y>420</y>
+       <width>321</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_7">
+      <item>
+       <widget class="QLabel" name="brand_type_label">
+        <property name="text">
+         <string>Brand:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="brand_feedback_system">
+        <property name="toolTip">
+         <string extracomment="Brand Recognized by System"/>
+        </property>
+        <property name="text">
+         <string>System BR Feed</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>400</y>
+       <width>321</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_8">
+      <item>
+       <widget class="QLabel" name="brand_name_label">
+        <property name="text">
+         <string>Brand Name</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="brand_labeler">
+        <property name="toolTip">
+         <string extracomment="Enter Brand Name for Advertisement"/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>430</y>
+       <width>521</width>
+       <height>164</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <widget class="QLabel" name="scbr_head">
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Stream Classification &amp; Brand Recognition Annotation</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="scbr_head_d1">
+        <property name="text">
+         <string>Following steps should be followed for Stream Classification &amp; Brand Recognition:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="scbr_head_d2">
+        <property name="text">
+         <string>1. Use Next &amp; Back button to propagate through stream.</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="scbr_head_d3">
+        <property name="text">
+         <string>2. Use radio buttons to classify stream classification.</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="scbr_head_d4">
+        <property name="text">
+         <string>3. If Advertisement, plase fill Brand Name Section.</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="scbr_head_d5">
+        <property name="text">
+         <string>4. Feel free to use slider to evaluate system feedback.</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="scbr_head_d6">
+        <property name="text">
+         <string>5. If system feedback and current frame is same, please mark Same Frame checkbox.</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="scbr_head_d7">
+        <property name="text">
+         <string>6. After you done for current session, please press Save Annotation button.</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_3">
+    <attribute name="title">
+     <string>Face Detection</string>
+    </attribute>
+    <widget class="QLabel" name="current_frame_label_face">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>854</width>
+       <height>480</height>
+      </rect>
+     </property>
+     <property name="mouseTracking">
+      <bool>true</bool>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="text">
+      <string>Current Frame</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>510</y>
+       <width>168</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_9">
+      <item>
+       <widget class="QPushButton" name="face_back_button">
+        <property name="text">
+         <string>Back</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="face_next_button">
+        <property name="text">
+         <string>Next</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QLineEdit" name="face_annot">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>510</y>
+       <width>451</width>
+       <height>23</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="save_annot_face">
+     <property name="geometry">
+      <rect>
+       <x>650</x>
+       <y>510</y>
+       <width>221</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Save Annotation</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>540</y>
+       <width>556</width>
+       <height>143</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <widget class="QLabel" name="fd_head">
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Face Detection &amp; Recognition Annotation</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="fd_head_d1">
+        <property name="text">
+         <string>Following steps should be followed for Face Detection &amp; Recognition:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="fd_head_d2">
+        <property name="text">
+         <string>1. Use Next &amp; Back button to propagate through stream.</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="fd_head_d3">
+        <property name="text">
+         <string>2. Draw a box over face area.</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="fd_head_d4">
+        <property name="text">
+         <string>3. Write name for respective face in the given space.</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="fd_head_d5">
+        <property name="text">
+         <string>4. Iteratively draw boxes and write respective names until you are done with current frame.</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="fd_head_d6">
+        <property name="text">
+         <string>5. After you done for current session, please press Save Annotation button.</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_4">
+    <attribute name="title">
+     <string>Ticker Detection</string>
+    </attribute>
+    <widget class="QLabel" name="current_frame_label_ticker">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>854</width>
+       <height>480</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Current Frame</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>510</y>
+       <width>168</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_10">
+      <item>
+       <widget class="QPushButton" name="ticker_back_button">
+        <property name="text">
+         <string>Back</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="ticker_next_button">
+        <property name="text">
+         <string>Next</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QLineEdit" name="ticker_annot">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>510</y>
+       <width>451</width>
+       <height>23</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="save_annot_ticker">
+     <property name="geometry">
+      <rect>
+       <x>650</x>
+       <y>510</y>
+       <width>221</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Save Annotation</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>540</y>
+       <width>539</width>
+       <height>143</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_6">
+      <item>
+       <widget class="QLabel" name="ticker_head">
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Text Detection &amp; Recognition Annotation</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="ticker_head_d1">
+        <property name="text">
+         <string>Following steps should be followed for Ticker Detection &amp; Recognition:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="ticker_head_d2">
+        <property name="text">
+         <string>1. Use Next &amp; Back button to propagate through stream.</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="ticker_head_d3">
+        <property name="text">
+         <string>2. Draw a box over text area.</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="ticker_head_d4">
+        <property name="text">
+         <string>3. Write text for respective text in the given space.</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="ticker_head_d5">
+        <property name="text">
+         <string>4. Iteratively draw boxes and write respective text until you are done with current frame.</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="ticker_head_d6">
+        <property name="text">
+         <string>5. After you done for current session, please press Save Annotation button.</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
